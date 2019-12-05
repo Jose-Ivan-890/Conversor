@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 class Volumen extends StatelessWidget{
   TextEditingController KGController= TextEditingController();
+    TextEditingController KGController2= TextEditingController();
+      TextEditingController KGController3= TextEditingController();
+        TextEditingController KGController4= TextEditingController();
 double resultado, resultado2;
   @override
   Widget build(BuildContext context) {
@@ -60,7 +63,7 @@ double resultado, resultado2;
                     title: Text('Metro cubico a Litro'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KGController2,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -72,7 +75,7 @@ double resultado, resultado2;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text)*1000;
+                          resultado= double.parse(KGController2.text)*1000;
                           return showDialog(
                             context: context,
                             builder: (context){
@@ -98,7 +101,7 @@ double resultado, resultado2;
                     title: Text(' gramos a kilogramos'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KGController3,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -110,7 +113,7 @@ double resultado, resultado2;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text)/1000;
+                          resultado= double.parse(KGController3.text)/1000;
                           return showDialog(
                             context: context,
                             builder: (context){
@@ -136,7 +139,7 @@ double resultado, resultado2;
                     title: Text('Litro a Onza'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KGController4,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -148,7 +151,7 @@ double resultado, resultado2;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text)*33.814;
+                          resultado= double.parse(KGController4.text)*33.814;
                           return showDialog(
                             context: context,
                             builder: (context){

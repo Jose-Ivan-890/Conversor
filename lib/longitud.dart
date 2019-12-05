@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Longitud extends StatelessWidget{
-  TextEditingController KGController= TextEditingController();
+  TextEditingController KG= TextEditingController();
+   TextEditingController KG2= TextEditingController();
+    TextEditingController KG3= TextEditingController();
+     TextEditingController KG4= TextEditingController();
 double resultado;
   @override
   Widget build(BuildContext context) {
@@ -23,11 +26,11 @@ double resultado;
                     title: Text('Metros a centimetros'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KG,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
-
-                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.supervised_user_circle),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
                       helperText: 'covierte Mts --> cm'
                     ),
                   ),
@@ -36,7 +39,7 @@ double resultado;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text)*100;
+                          resultado= double.parse(KG.text)*100;
                           return showDialog(
                             context: context,
                             builder: (context){
@@ -62,10 +65,12 @@ double resultado;
                     title: Text('Kilometros a metros'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KG2,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.sync),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      
                       helperText: 'covierte km --> mts'
                     ),
                   ),
@@ -74,7 +79,7 @@ double resultado;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text)*1000;
+                          resultado= double.parse(KG2.text)*1000;
                           return showDialog(
                             context: context,
                             builder: (context){
@@ -100,10 +105,12 @@ double resultado;
                     title: Text('Kilometros a centimetros'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KG3,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.tab),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                     
                       helperText: 'covierte km --> cm'
                     ),
                   ),
@@ -112,7 +119,7 @@ double resultado;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text)*100000;
+                          resultado= double.parse(KG3.text)*100000;
                           return showDialog(
                             context: context,
                             builder: (context){

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 class Temperatura extends StatelessWidget{
   TextEditingController KGController= TextEditingController();
+  TextEditingController KGController2= TextEditingController();
+  TextEditingController KGController3= TextEditingController();
 double resultado,op;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,8 @@ double resultado,op;
                     controller: KGController,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
-
+                      fillColor: Colors.green[50],
+                      filled: true,
                       border: OutlineInputBorder(),
                       helperText: 'F° --> C°'
                     ),
@@ -64,9 +67,11 @@ double resultado,op;
                     title: Text('Celsius a Fahrenheit'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KGController2,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
+                      fillColor: Colors.lightBlue[50],
+                      filled: true,
                       border: OutlineInputBorder(),
                       helperText: 'C°  --> f°'
                     ),
@@ -76,7 +81,7 @@ double resultado,op;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text);
+                          resultado= double.parse(KGController2.text);
                           op= (resultado*(9/5))+32;
                           return showDialog(
                             context: context,
@@ -103,9 +108,11 @@ double resultado,op;
                     title: Text('Kelvin a Fahrenheit'),
                   ),
                   TextField(
-                    controller: KGController,
+                    controller: KGController3,
                     keyboardType: TextInputType.number,// aparece un teclado numerico
                     decoration: InputDecoration(
+                      fillColor: Colors.red[50],
+                      filled: true,
                       border: OutlineInputBorder(),
                       helperText: 'K° --> F°'
                     ),
@@ -115,7 +122,7 @@ double resultado,op;
                       children: <Widget>[
                         FlatButton(child: Text('Convertir'),
                         onPressed: (){
-                          resultado= double.parse(KGController.text);
+                          resultado= double.parse(KGController3.text);
                           op=(resultado-273.15)*(9/5)+32;
                           return showDialog(
                             context: context,
